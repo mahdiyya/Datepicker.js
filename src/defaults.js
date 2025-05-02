@@ -28,10 +28,10 @@ export default {
   separator: ',',
 
   serialize(date) {
-    let dateStr = date.toLocaleDateString() ? date.toLocaleDateString() : new Date(date).toLocaleDateString()
+    let dateStr = new Date(date).toLocaleDateString()
 
     if (this.get('time')) {
-      let timeStr = date.toLocaleTimeString()
+      let timeStr = new Date(date).toLocaleTimeString()
       timeStr = timeStr.replace(/(\d{1,2}:\d{2}):00/, '$1')
       return `${dateStr}@${timeStr}`
     }
