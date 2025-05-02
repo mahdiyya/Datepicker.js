@@ -28,7 +28,7 @@ export default {
   separator: ',',
 
   serialize(date) {
-    let dateStr = date.toLocaleDateString()
+    let dateStr = date.toLocaleDateString() ? date.toLocaleDateString() : new Date(date).toLocaleDateString()
 
     if (this.get('time')) {
       let timeStr = date.toLocaleTimeString()
